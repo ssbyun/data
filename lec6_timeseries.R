@@ -143,7 +143,7 @@ points(gco2.forc.long$lower[,1], col="red", type="l")
 tail(gco2.forc.long$upper)
 tail(gco2.forc.long$lower)
 
-#~~~~ 로그 안 취한것과 비교그림 : 차이가 거의 없음음
+#~~~~ 로그 안 취한것과 비교그림 : 차이가 거의 없음
 gco2.log <- log(ts.gco2)
 plot(gco2.log)
 gco2.forc.log <- HoltWinters(gco2.log)
