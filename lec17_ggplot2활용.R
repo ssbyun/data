@@ -118,3 +118,4 @@ ggplot(data=mtcars, mapping=aes(x=wt, y=mpg, size=disp)) +
   geom_point(shape=21, color="black", fill="yellow") +
   scale_size_continuous(range=c(1,10)) +
   scale_y_continuous(limits=c(0,40))
+
