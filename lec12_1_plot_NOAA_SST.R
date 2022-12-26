@@ -17,7 +17,7 @@ lon <- ncvar_get(ncin,"lon")
 lat <- ncvar_get(ncin,"lat")
 sst <- ncvar_get(ncin,"sst") # degree C
 
-
+sst <- sst[,,1]
 # --- Time
 ncatt_get(ncin,'time')   # 시간확인
 # Time <- as_datetime(c(t*60*60),origin="1981-01-01") # hours --> seconds : t*60*60 
@@ -55,57 +55,3 @@ filled.contour(x=lon, y=lat, z=sst,
                
                plot.axes = {axis(1); axis(2); points(130, 43, pch=19, cex=3, col="blue");       # 지도위에 point 표시
                     contour(x=lon, y=lat, z=sst, levels = "20", col="black", add = TRUE )}) # 특정값(20도) line 표시
-
-
-
-
-# ================  Contour with oce  ===============
-clim <- c(0, 30)                      # colorbar limit
-drawPalette(clim, col=oce.colorsJet)  # show colorbar
-
-data("coastlineWorld")
-mapPlot(coastlineWorld, lon, lat, longitudelim=c(120, 150), latitudelim=c(30,50), 
-        projection="+proj=merc", grid=FALSE)
-
-mapImage(lon, lat, sst, col=oce.colorsJet, zlim=clim)  # overlay sst
-
-# overlay coastline fill in gray again
-mapPolygon(coastlineWorld, col='grey')
-
-# add variable label
-lab = 'SST [deg C]'   # define unit label
-mtext(lab, side = 3, line = 0, adj = 0, cex = 0.7)
-
-
-
-# add title
-# title(timestamp[1])
-
-
-
-
-
-
-
-
-
-ncatt_get(ncin,'time')
-#convert the hours into date + hour
-#as_datetime() function of the lubridate package needs seconds
-#time unit: hours since 1900-01-01
-
-timestamp <- as_datetime(c(t*60*60),origin="1981-01-01")
-head(timestamp)
-
-# install.packages("insol")
-library(insol)
-
-
-to = insol::JDymd(year = 1981, month = 1, day = 1)   # original time : 1950, 1, 1
-jd = to + t                                       # data time + original time 
-date = insol::JD(jd, inverse = TRUE)                 # Real time
-
-Ttime = tibble::as_tibble( data.frame(time, jd, date) )      # 시간배열 합치기
-
-timestamp <- as_datetime(c(t*60*60),origin="1900-01-01")
-head(timestamp)
