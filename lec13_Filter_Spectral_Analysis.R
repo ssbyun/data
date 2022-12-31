@@ -115,7 +115,7 @@ idx <- which(pw$spec >= 1500 & pw$spec <= 1700)
 
 library(ggplot2)
 ggplot() + aes(x=pw$freq, y=pw$spec) + geom_line(color="blue") + scale_x_log10() +
-  labs("Spectrum of u-current", x="Frequency(cph)", y=bquote((cm/s)^2/cph)  ) +   # 윗첨자: ^, 아래첨자: []
+  labs(title="Spectrum of u-current", x="Frequency(cph)", y=bquote((cm/s)^2/cph)  ) +   # 윗첨자: ^, 아래첨자: []
   theme(axis.title = element_text(size=15), axis.text=element_text(size=12, face="bold"))
 
 
