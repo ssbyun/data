@@ -15,6 +15,7 @@ u <- ncvar_get(ts, "UCUR")
 
 #--- convert julian to gregorian
 
+install.packages("insol")
 library(insol)
 
 ncatt_get(ts, "TIME")
@@ -54,6 +55,7 @@ u5 <- u4*100   # m/s --> cm/s
 # lines(u5, type="l", col="red")
 
 #================== Filter
+install.packages("dplR")
 library(dplR)
 
 # low-pass filter -- note Freq is passed in (0.5 --> 1/2)
@@ -113,18 +115,9 @@ idx <- which(pw$spec >= 1500 & pw$spec <= 1700)
 
 library(ggplot2)
 ggplot() + aes(x=pw$freq, y=pw$spec) + geom_line(color="blue") + scale_x_log10() +
-  labs("Spectrum of u-current", x="Frequency(cph)", y=bquote((cm/s^2)/cph)  ) +   # 윗^/아래첨자[] bquote 사용
+  labs("Spectrum of u-current", x="Frequency(cph)", y=bquote((cm/s)^2/cph)  ) +   # 윗첨자: ^, 아래첨자: []
   theme(axis.title = element_text(size=15), axis.text=element_text(size=12, face="bold"))
 
 
 
-
-#~~~~~~~~~~~ Freq. 이상함.
-library(tseries)
-kpss.test(u5)  # 정상시계열 확인
-
-sp <- spectrum(u5, log="no", xlim = c(0, 0.1))
-# cpgram(spdata) # 누적주기도
-
-periodogram(u5, xlim = c(0, 0.1))
 
