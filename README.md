@@ -4,6 +4,7 @@
     "책에 예시로 제시한 R download 사이트(cran.biodisk.org : UNIST)는 해당 연구소의 사정으로 더이상 접속되지 않으므로   
        
      CRAN Mirrors(cran.r-project.org)의 적절한 링크(https://cran.yu.ac.kr/ 등)를 통해 다운로드 하기 바란다." 
+     
      * 참고 : RStudio 회사명 변경 --> Posit 
 ##
 책에 사용된 R script와 data 파일 예제를 별도 폴더로 구분하지 않고 업로드 하였으므로
