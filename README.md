@@ -1,6 +1,7 @@
 ### R 해양빅데이터 분석 / 도서출판 청람 / 2023년 2월 / 저자 : 변상신 ###
 
 ###  
+    << R Download 관련 >>
     "책의 예시(2 page)로 제시한 R download 사이트(cran.biodisk.org : UNIST)는 해당 연구소의 사정으로 더이상 접속되지 않으므로   
        
      CRAN Mirrors(cran.r-project.org)의 적절한 링크(https://cran.yu.ac.kr/ 등)를 통해 다운로드 하기 바란다." 
