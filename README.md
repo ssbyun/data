@@ -7,7 +7,7 @@
        
      CRAN Mirrors(cran.r-project.org)의 적절한 링크(https://cran.yu.ac.kr/ 등)를 통해 다운로드 하기 바란다." 
      
-     * <참고> RStudio 회사명 변경 --> Posit 
+     * <R Studio 다운로드 관련 참고> RStudio 회사명 변경 --> Posit 
 ##
 책에 사용된 R script와 data 파일 예제를 별도 폴더로 구분하지 않고 업로드 하였으므로
 파일을 다운로드 받은 뒤 개인 컴퓨터에서 유형별 폴더로 구분하여 사용하면 더욱 효과적일 것이다.
